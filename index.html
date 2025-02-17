@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Розклад занять</h1>
+
+    <div class="container">
+        <h2>Викладачі</h2>
+        <input type="text" id="teacher_name" placeholder="Ім'я викладача">
+        <button onclick="addTeacher()">Додати</button>
+        <ol id="teacher_list"></ol>
+
+        <h2>Додати пару</h2>
+        <select id="lesson_day">
+            <option value="">Оберіть день</option>
+            <option value="Понеділок">Понеділок</option>
+            <option value="Вівторок">Вівторок</option>
+            <option value="Середа">Середа</option>
+            <option value="Четвер">Четвер</option>
+            <option value="П'ятниця">П'ятниця</option>
+            <option value="Субота">Субота</option>
+            <option value="Неділя">Неділя</option>
+        </select>
+        <input type="text" id="lesson_time" placeholder="Час (наприклад, 10:00)">
+        <input type="text" id="lesson_subject" placeholder="Предмет">
+        <select id="teacher_select"></select>
+        <button onclick="addLesson()">Додати</button>
+
+        <h2>Розклад</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>День</th>
+                    <th>Час</th>
+                    <th>Викладач</th>
+                    <th>Предмет</th>
+                </tr>
+            </thead>
+            <tbody id="schedule_table"></tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
